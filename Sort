@@ -13,8 +13,8 @@ def mergeSort(arr):
   mid = len(arr)//2
   if(len(arr) <= 1):
     return arr
-  left = mergeSort(arr[0:mid])
-  right = mergeSort(arr[mid:len(arr)])
+  left = mergeSort(arr[:mid])
+  right = mergeSort(arr[mid:])
 
   i = 0
   while len(left) > 0 or len(right) > 0:

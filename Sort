@@ -7,6 +7,18 @@ def bubbleSort(arr):
         swap(arr, j, j-1)
 
   return arr
+  
+ # Exchange Sort
+ def exchangeSort(arr):
+  l = len(arr)
+  for i in range(l):
+    c = i
+    for j in range(i+1, l):
+      if arr[j] < arr[c]:
+        c = j
+    swap(arr, c, i)
+    
+  return arr
 
 # Merge Sort
 def mergeSort(arr):

@@ -39,6 +39,27 @@ def mergeSort(arr):
     i += 1
     
   return arr
+  
+# Quick Sort
+def quickSort(arr):
+  quickSortRec(arr, 0, len(arr)-1)
+
+def quicksSortPartition(arr, start, end):
+  i = start
+  pivot = arr[end]
+  for j in range(start,end):
+    if arr[j] <= pivot:
+      swap(arr, i, j)
+      i += 1
+  swap(arr, i, end)
+  return i
+ 
+def quickSortRec(arr, start, end):
+  if end - start < 1: return
+  i = quicksSortPartition(arr, start, end)
+  quickSortRec(arr, start, i-1)
+  quickSortRec(arr, i+1, end)
+
 
 # Swap
 def swap(arr, i, j):

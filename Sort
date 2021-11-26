@@ -40,6 +40,21 @@ def mergeSort(arr):
     
   return arr
   
+# Pancake Sort
+def pancakeSort(arr):
+  l = len(arr)
+  for i in range(l):
+    maxI = 0
+    for j in range(l-i):
+      if arr[maxI] < arr[j]:
+        maxI = j
+    pancakeSortFlip(arr, maxI+1)
+    pancakeSortFlip(arr, l-i)
+
+def pancakeSortFlip(arr, k):
+  for i in range(k//2):
+    swap(arr, k-i-1, i)
+  
 # Quick Sort
 def quickSort(arr):
   quickSortRec(arr, 0, len(arr)-1)

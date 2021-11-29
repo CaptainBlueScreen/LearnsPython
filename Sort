@@ -1,8 +1,8 @@
 # Bubble Sort
 def bubbleSort(arr):
-  length = len(arr)
-  for i in range(length):
-    for j in range(1, length - i):
+  l = len(arr)
+  for i in range(l):
+    for j in range(1, l - i):
       if arr[j] < arr[j-1]:
         swap(arr, j, j-1)
 
@@ -15,6 +15,17 @@ def exchangeSort(arr):
     for j in range(i+1, l):
       if arr[j] < arr[i]:
         swap(arr, j, i)
+    
+  return arr
+  
+# Insertion Sort
+def insertionSort(arr):
+  l = len(arr)
+  for i in range(1,l):
+    j = i
+    while j > 0 and arr[j] < arr[j-1]:
+      swap(arr, j, j-1)
+      j = j-1
     
   return arr
 
@@ -38,18 +49,6 @@ def mergeSort(arr):
     
   return arr
 
-# Selection Sort
-def selectionSort(arr):
-  l = len(arr)
-  for i in range(l):
-    c = i
-    for j in range(i+1, l):
-      if arr[j] < arr[c]:
-        c = j
-    swap(arr, c, i)
-    
-  return arr
-
 # Pancake Sort
 def pancakeSort(arr):
   l = len(arr)
@@ -64,7 +63,19 @@ def pancakeSort(arr):
 def pancakeSortFlip(arr, k):
   for i in range(k//2):
     swap(arr, k-i-1, i)
-  
+
+# Selection Sort
+def selectionSort(arr):
+  l = len(arr)
+  for i in range(l):
+    c = i
+    for j in range(i+1, l):
+      if arr[j] < arr[c]:
+        c = j
+    swap(arr, c, i)
+    
+  return arr
+
 # Quick Sort
 def quickSort(arr):
   quickSortRec(arr, 0, len(arr)-1)
